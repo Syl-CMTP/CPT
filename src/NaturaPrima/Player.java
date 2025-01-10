@@ -2,11 +2,11 @@ package NaturaPrima;
 
 public class Player {
     private String[] selectedTreatments;
-    private double budget;
+    private int budget;
 
-    public Player(String[] selectedTreatments, double budget) {
+    public Player(String[] selectedTreatments, int budget) {
         this.selectedTreatments = selectedTreatments;
-        this.budget = budget;
+        this.budget = 25000;
     }
 
     public void choose_treatment() {
@@ -17,7 +17,23 @@ public class Player {
         // Implementation of view_treatments method goes here
     }
 
-    public void spend_money(double cost) {
+    public void spend_money(int cost) {
         budget -= cost;
+    }
+
+    public String[] getSelectedTreatments() {
+        return selectedTreatments;
+    }
+
+    public void setSelectedTreatments(String[] selectedTreatments) {
+        this.selectedTreatments = selectedTreatments;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
     }
 }

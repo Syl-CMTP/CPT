@@ -2,12 +2,11 @@ package NaturaPrima;
 
 public class Ecosystem {
     private String status;
-    private int budget;
     private String treatments;
+    private int currentTurn;
 
     public Ecosystem(String status, String treatments) {
         this.status = status;
-        this.budget = 10000;
         this.treatments = treatments;
     }
     
@@ -17,14 +16,6 @@ public class Ecosystem {
     
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public int getBudget() {
-        return budget;
-    }
-
-    public void setBudget(int budget) {
-        this.budget = budget;
     }
 
     public String getTreatments() {

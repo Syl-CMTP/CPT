@@ -1,11 +1,13 @@
 package NaturaPrima;
 
 public class Treatment {
+    private String treatmentName;
     private double cost;
-    private String[] pros;
-    private String[] cons;
+    private String pros;
+    private String cons;
 
-    public Treatment(double cost, String[] pros, String[] cons) {
+    public Treatment(String treatmentName, double cost, String pros, String cons) {
+        this.treatmentName = treatmentName;
         this.cost = cost;
         this.pros = pros;
         this.cons = cons;
@@ -19,31 +21,28 @@ public class Treatment {
         this.cost = cost;
     }
 
-    public String[] getPros() {
+    public String getPros() {
         return pros;
     }
 
-    public void setPros(String[] pros) {
+    public void setPros(String pros) {
         this.pros = pros;
     }
 
-    public String[] getCons() {
+    public String getCons() {
         return cons;
     }
     
-    public void setCons(String[] cons) {
+    public void setCons(String cons) {
         this.cons = cons;
     }
 
-    public void displayPros() {
-        for (String pro : pros) {
-            System.out.println(pro);
-        }
+    public String getTreatmentName() {
+        return treatmentName;
     }
 
-    public void displayCons() {
-        for (String con : cons) {
-            System.out.println(con);
-        }
+    public void setTreatmentName(String treatmentName) {
+        this.treatmentName = treatmentName;
     }
+
 }
