@@ -28,36 +28,43 @@ public class NaturaPrimaMain {
         //TODO: Make the emoji ending screen (Look at Mr.Habib's email)
         //TODO: Customize the text color using this website --> https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
         //TODO: See if we have time to implement difficulty.
-        
+    
+        // List of all treatments
+        Treatment treatments[] = {
+            new Treatment("multipond",750, "good", "bad"),
+            new Treatment("lake",2000, "good", "bad"),
+            new Treatment("tree planting",12s50, "good", "bad"),
+            new Treatment("tree burning", 500, "good", "bad"),
+            new Treatment("habitat building",3000, "good", "bad"),
+            new Treatment("Introduces Pollinators",750, "good", "bad")
+        };
 
+        // Room/Turn system
+        for (int i = 0; i < treatments.length; i++) {
+            
+            System.out.println("Option 1: " + treatments[((int)Math.random() * treatments.length)].getTreatmentName());
+        }
+        //if choice gets picked, add to treatment to players selectedTreatments
+
+        // Game
         System.out.println("------------------------------------------------------------------------------------------------------------------------------------\n");
         System.out.println("\nWelcome to Natura Prima!\nA text adventure game in which you try to save a dying ecosystem.");
         System.out.print("Input a username: ");
         String username = input.nextLine();
-        //TODO: Make a while loop for this
+        // TODO: Make a while loop for this
         System.out.println("You have chosen, " + username + ", are you sure you want this?");
         System.out.println("yes or no?");
         String optionOne = input.nextLine();
         if (optionOne == "yes") {
-            //Continue the game
+            // Continue the game
         } else {
             // Rename
         }
 
         input.close();
 
-        //Game Starts
+        // Game Starts
         System.out.println(username + ", You went back to your family home and saw your childhood playplace was devastated. You have 25000 to fix it");
-
-        // List of all treatments
-        Treatment treatments[] = {
-            new Treatment("multipond",750, "good", "bad"),
-            new Treatment("lake",2000, "good", "bad"),
-            new Treatment("tree planting",1250, "good", "bad"),
-            new Treatment("tree burning", 500, "good", "bad"),
-            new Treatment("habitat building",3000, "good", "bad"),
-            new Treatment("Introduces Pollinators",750, "good", "bad")
-        };
 
     }
 }

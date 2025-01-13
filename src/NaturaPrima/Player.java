@@ -1,10 +1,12 @@
 package NaturaPrima;
 
+import java.util.ArrayList;
+
 public class Player {
-    private String[] selectedTreatments;
+    private ArrayList<Treatment> selectedTreatments = new ArrayList<Treatment>();
     private int budget;
 
-    public Player(String[] selectedTreatments, int budget) {
+    public Player(ArrayList<Treatment> selectedTreatments, int budget) {
         this.selectedTreatments = selectedTreatments;
         this.budget = 25000;
     }
@@ -21,11 +23,11 @@ public class Player {
         budget -= cost;
     }
 
-    public String[] getSelectedTreatments() {
+    public ArrayList<Treatment> getSelectedTreatments() {
         return selectedTreatments;
     }
 
-    public void setSelectedTreatments(String[] selectedTreatments) {
+    public void setSelectedTreatments(ArrayList<Treatment> selectedTreatments) {
         this.selectedTreatments = selectedTreatments;
     }
 

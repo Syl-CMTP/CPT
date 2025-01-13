@@ -44,5 +44,4 @@ public class Treatment {
     public void setTreatmentName(String treatmentName) {
         this.treatmentName = treatmentName;
     }
-
 }
