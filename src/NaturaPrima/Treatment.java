@@ -44,4 +44,9 @@ public class Treatment {
     public void setTreatmentName(String treatmentName) {
         this.treatmentName = treatmentName;
     }
+
+    public String toString() {
+        return "Treatment Name: " + treatmentName + "\nCost: " + cost;
+    }
+
 }
