@@ -1,15 +1,2 @@
-# This is the title of the README (The app name)
-Description of the project maybe?
-
-1. List of things
-1. Another one
-1. Another one
-
-- Bullet points
-- more of them
-
-```java
-public static void main(String[] args) {
-    System.out.println("Hello world");
-}
-```
+# Natura Prima
+This game is an educational text adventure game about reviving a dead ecosystem. The player will learn the intricacies of reviving an ecosystem through a variety of different treatment options and the outcome those choices will follow.

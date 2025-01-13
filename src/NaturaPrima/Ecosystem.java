@@ -1,13 +1,15 @@
 package NaturaPrima;
 
+import java.util.ArrayList;
+
 public class Ecosystem {
     private String status;
-    private String treatments;
+    private ArrayList<Treatment> selectedTreatments = new ArrayList<Treatment>();
     private int currentTurn;
 
-    public Ecosystem(String status, String treatments) {
+    public Ecosystem(String status, ArrayList<Treatment> treatments) {
         this.status = status;
-        this.treatments = treatments;
+        this.selectedTreatments = treatments;
     }
     
     public String getStatus() {
@@ -18,11 +20,11 @@ public class Ecosystem {
         this.status = status;
     }
 
-    public String getTreatments() {
-        return treatments;
+    public ArrayList<Treatment> getSelectedTreatments() {
+        return selectedTreatments;
     }
 
-    public void setTreatments(String treatments) {
-        this.treatments = treatments;
+    public void setSelectedTreatments(ArrayList<Treatment> selectedTreatments) {
+        this.selectedTreatments = selectedTreatments;
     }
 }
