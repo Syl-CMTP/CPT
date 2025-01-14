@@ -53,6 +53,8 @@ public class NaturaPrimaMain {
         }
 
         System.out.println("Option 2: " + treatments[optionTwoRandIndex].getTreatmentName());
+
+        System.out.println("testing testing 1 two 333");
     
         //if choice gets picked, add to treatment to players selectedTreatments
 
