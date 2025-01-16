@@ -36,7 +36,7 @@ public class Treatment {
     }
 
     public String toString() {
-        return "Treatment Name: " + treatmentName + "\nCost: " + cost;
+        return "Treatment Name: " + treatmentName;
     }
 
 }
