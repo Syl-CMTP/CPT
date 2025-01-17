@@ -3,6 +3,8 @@ package NaturaPrima;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+// TODO: Add Javadoc comments for all classes, methods, and fields
+
 /**
  * author: Carl Palad
  * date: 09/01/2025
@@ -25,13 +27,14 @@ public class NaturaPrimaMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         // Main Task List
-        //TODO: Make pros and cons into point system for the treatments to show treatment compatibility
-        //TODO: Research and input pros and cons for each treatment
+        //TODO: Change the placeholder list of treatments into an actual list of treatments
+        //TODO: Tweak the scores for each treatment
         //TODO: Make the end screen(shows user's ending)
-        //TODO: Improve the start screen(Explains the premise of the game)
-        //TODO: Make the user be able to choose to restart the game
+        //TODO: Make the various endings
+        //TODO: Improve the start screen by adding more details about the game's objective and instructions on how to play
         
         // Extra Task List
+        //TODO: Make the user be able to choose to restart the game
         //TODO: Make it so the user cannot use an inappropriate username
         //TODO: Make the emoji ending screen (Look at Mr.Habib's email)
         //TODO: Customize the text color using this website --> https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
@@ -39,16 +42,138 @@ public class NaturaPrimaMain {
     
         // List of all treatments
         MyLinkedList<Treatment> treatments = new MyLinkedList<>();
-        treatments.append(new Treatment("multipond", 750, "info", "good", "bad"));
-        treatments.append(new Treatment("lake", 2000, "info", "good", "bad"));
-        treatments.append(new Treatment("tree planting", 1250, "info", "good", "bad"));
-        treatments.append(new Treatment("tree burning", 500, "info", "good", "bad"));
-        treatments.append(new Treatment("habitat building", 3000, "info", "good", "bad"));
-        treatments.append(new Treatment("Introduces Pollinators", 750, "info", "good", "bad"));
-        treatments.append(new Treatment("Introduces Bulls", 750, "info", "good", "bad"));
-        treatments.append(new Treatment("Introduces Pigs", 750, "info", "good", "bad"));
-        treatments.append(new Treatment("Introduces Flys", 750, "info", "good", "bad"));
-        treatments.append(new Treatment("Introduces Unicorns", 750, "info", "good", "bad"));
+        treatments.append(new Treatment("Make multiple ponds",
+        750,
+        "info",
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Make a lake",
+        2000,
+        "info",
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Plant some trees",
+        1250,
+        "info",
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Burn some trees",
+        500, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Build some wildlife shelters",
+        3000,
+        "info",
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Introduces Pollinators",
+        750, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Introduces Bulls",
+        750, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Introduces Pigs",
+        750, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Introduces Flys",
+        750, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Introduces Unicorns",
+        750, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
+        treatments.append(new Treatment("Introduces wildlife corridors",
+        750, 
+        "info", 
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+        ));
 
         // List of selected treatments
         ArrayList<Treatment> selectedTreatments = new ArrayList<Treatment>();
@@ -58,6 +183,7 @@ public class NaturaPrimaMain {
         // Game Variables
         int turnCount = 0;
         int maxTurns = 10;
+        double budget = 25000;
         
         //if choice gets picked, add to treatment to players selectedTreatments
         
@@ -74,7 +200,7 @@ public class NaturaPrimaMain {
             username = input.nextLine();
             // Should I remove this? On the fence about this, feels like the opposite of what I wanted
             // Also can't figure out a way to make it so that even if the user uses underscores, it still counts as inappropriate
-            String[] inappropriateWords = {"fuck", "ass", "bitch", "butt", "booty", "nigg", "penis", "pussy", "testicles", "boob", "shit", "pee", "piss", "tits", "semen", "sperm", "arse", "bastard", "cunt", "cock", "cuck", "sucker", "poop", "fag", "weed"};
+            String[] inappropriateWords = {"fuck", "sex", "ass", "bitch", "butt", "booty", "penis", "testicles", "shit", "pee", "piss", "semen", "sperm", "arse", "bastard", "cock", "cuck", "sucker", "poop", "weed"};
             boolean inappropriate = false;
             for (String word : inappropriateWords) {
                 if (username.toLowerCase().contains(word.toLowerCase())) {
@@ -94,11 +220,14 @@ public class NaturaPrimaMain {
             if (confirmation.equalsIgnoreCase("yes")) {
                 validUsername = true;
             }
+
+            System.out.println("\n");
         }
 
-        System.out.println(username + ", You went back to your family home and saw your childhood playplace was devastated. You have 25000 to fix it");
+        System.out.println(username + ", You went back to your family home and saw your childhood playplace was devastated. You have 25000 to rewild it\n");
         
         // Room/Choice System
+        boolean isChoiceChosen = false;
         while (turnCount < maxTurns) {
             // Picks a random treatment for option 1 and 2
             int optionOneRandIndex = (int)(Math.random() * treatments.size());
@@ -115,23 +244,50 @@ public class NaturaPrimaMain {
             System.out.println("The info for option 1 is " + treatments.get(optionOneRandIndex).getInfo() + "\n");
             System.out.println("The info for option 2 is " + treatments.get(optionTwoRandIndex).getInfo() + "\n");
         
-            System.out.print("Choose an option: 1 or 2\n");
+            System.out.print("Choose an option '1' or '2':");
             int choice = input.nextInt();
             input.nextLine();
+
+            System.out.println("\n");
+            
+            // Reset for the next turn
+            isChoiceChosen = false; 
         
-            if (choice == 1) {
-                selectedTreatments.add(treatments.get(optionOneRandIndex));
-            } else if (choice == 2) {
-                selectedTreatments.add(treatments.get(optionTwoRandIndex));
-            } else {
-                System.out.println("Invalid choice. Please choose 1 or 2\n");
+            while (isChoiceChosen == false) {
+                if (choice == 1 && treatments.get(optionOneRandIndex).getCost() <= budget) {
+                    selectedTreatments.add(treatments.get(optionOneRandIndex));
+                    budget -= treatments.get(optionOneRandIndex).getCost();
+                    System.out.println(treatments.get(optionOneRandIndex).getTreatmentName() + " was chosen.");
+                    isChoiceChosen = true;
+                } else if (choice == 2 && treatments.get(optionTwoRandIndex).getCost() <= budget) {
+                    selectedTreatments.add(treatments.get(optionTwoRandIndex));
+                    budget -= treatments.get(optionTwoRandIndex).getCost();
+                    System.out.println(treatments.get(optionTwoRandIndex).getTreatmentName() + " was chosen.");
+                    isChoiceChosen = true;
+                } else if (choice == 1 && treatments.get(optionOneRandIndex).getCost() > budget) {
+                    System.out.println("insufficient budget, choose the other option.");
+                } else if (choice == 2 && treatments.get(optionTwoRandIndex).getCost() > budget) {
+                    System.out.println("insufficient budget, choose the other option.");
+                } else {
+                    System.out.println("Invalid choice. Please choose 1 or 2\n");
+                }
+
+                // If there is no choice chosen, ask the user to choose again
+                // or else we go into an infinite loop lol
+                if (isChoiceChosen == false) {
+                    System.out.print("Choose an option: 1 or 2\n");
+                    choice = input.nextInt();
+                    input.nextLine();
+                }
             }
         
             turnCount++;
+
         }
         
         System.out.println(selectedTreatments.toString());
         
         input.close();
+
     }
 }
