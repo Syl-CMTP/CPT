@@ -42,22 +42,20 @@ public class NaturaPrimaMain {
     
         // List of all treatments
         MyLinkedList<Treatment> treatments = new MyLinkedList<>();
-        treatments.append(new Treatment("Make multiple ponds",
-        750,
-        "info",
+        treatments.append(new Treatment("Dig a couple bunds",
+        250,
+        "5 metre wide semi circles in the grounds for water retention",
         1,
         1,
         1,
         1,
         1,
-        1,
-        1,
+        10,
         1
         ));
-        treatments.append(new Treatment("Make a lake",
+        treatments.append(new Treatment("Make a pond",
         2000,
         "info",
-        1,
         1,
         1,
         1,
@@ -75,7 +73,6 @@ public class NaturaPrimaMain {
         1,
         1,
         1,
-        1,
         1
         ));
         treatments.append(new Treatment("Burn some trees",
@@ -86,14 +83,12 @@ public class NaturaPrimaMain {
         1,
         1,
         1,
-        1,
-        1,
+        10,
         1
         ));
         treatments.append(new Treatment("Build some wildlife shelters",
         3000,
         "info",
-        1,
         1,
         1,
         1,
@@ -111,13 +106,11 @@ public class NaturaPrimaMain {
         1,
         1,
         1,
-        1,
         1
         ));
         treatments.append(new Treatment("Introduces Bulls",
         750, 
         "info", 
-        1,
         1,
         1,
         1,
@@ -135,13 +128,11 @@ public class NaturaPrimaMain {
         1,
         1,
         1,
-        1,
         1
         ));
         treatments.append(new Treatment("Introduces Flys",
         750, 
         "info", 
-        1,
         1,
         1,
         1,
@@ -159,13 +150,11 @@ public class NaturaPrimaMain {
         1,
         1,
         1,
-        1,
         1
         ));
-        treatments.append(new Treatment("Introduces wildlife corridors",
-        750, 
+        treatments.append(new Treatment("Construct wildlife corridors",
+        5000, 
         "info", 
-        1,
         1,
         1,
         1,
@@ -241,8 +230,8 @@ public class NaturaPrimaMain {
             System.out.println("Option 1: " + treatments.get(optionOneRandIndex).getTreatmentName());
             System.out.println("Option 2: " + treatments.get(optionTwoRandIndex).getTreatmentName() + "\n");
 
-            System.out.println("The info for option 1 is " + treatments.get(optionOneRandIndex).getInfo() + "\n");
-            System.out.println("The info for option 2 is " + treatments.get(optionTwoRandIndex).getInfo() + "\n");
+            System.out.println(treatments.get(optionOneRandIndex).getInfo() + "It costs " + treatments.get(optionOneRandIndex).getCost() + "$.\n");
+            System.out.println(treatments.get(optionTwoRandIndex).getInfo() + "It costs " + treatments.get(optionTwoRandIndex).getCost() + "$.\n");
         
             System.out.print("Choose an option '1' or '2':");
             int choice = input.nextInt();

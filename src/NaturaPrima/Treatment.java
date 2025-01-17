@@ -11,10 +11,9 @@ public class Treatment {
     private int pollinatorScore;
     private int soilHealthScore;
     private int ecoTourismScore;
-    private int pollutionScore;
 
     public Treatment(String treatmentName, double cost, String info, int herbivoreScore, int carnivoreScore, int omnivoreScore, int plantScore,
-            int pollinatorScore, int soilHealthScore, int ecoTourismScore, int pollutionScore) {
+            int pollinatorScore, int soilHealthScore, int ecoTourismScore) {
         this.treatmentName = treatmentName;
         this.cost = cost;
         this.info = info;
@@ -25,7 +24,6 @@ public class Treatment {
         this.pollinatorScore = pollinatorScore;
         this.soilHealthScore = soilHealthScore;
         this.ecoTourismScore = ecoTourismScore;
-        this.pollutionScore = pollutionScore;
     }
 
     public String getTreatmentName() {
@@ -66,10 +64,6 @@ public class Treatment {
 
     public int getEcoTourismScore() {
         return ecoTourismScore;
-    }
-
-    public int getPollutionScore() {
-        return pollutionScore;
     }
 
     public String toString() {
