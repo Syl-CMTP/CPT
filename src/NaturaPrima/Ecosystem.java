@@ -29,7 +29,6 @@ public class Ecosystem {
     }
 
     public String getStatus() {
-
         if (finalHerbivoreScore > 0 && finalCarnivoreScore > 0 && finalOmnivoreScore > 0 && finalPlantScore > 0 && finalPollinatorScore > 0 && finalSoilHealthScore > 0 && finalEcoTourismScore > 0 && finalPollutionScore > 0) {
             return status = "water wonderland";
         } else if (finalHerbivoreScore > 0 && finalCarnivoreScore > 0 && finalOmnivoreScore > 0 && finalPlantScore > 0 && finalPollinatorScore > 0 && finalSoilHealthScore > 0 && finalEcoTourismScore > 0 && finalPollutionScore > 0) {

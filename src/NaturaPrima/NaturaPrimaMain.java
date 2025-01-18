@@ -24,6 +24,17 @@ import java.util.ArrayList;
 // had a head variable and a Node class that had a data and next variable. Will try to understand later and implement my human-made code.
 
 public class NaturaPrimaMain {
+    // Color Codes
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_RESET = "\u001B[0m";
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         // Main Task List
@@ -45,23 +56,23 @@ public class NaturaPrimaMain {
         treatments.append(new Treatment("Dig a couple bunds",
         250,
         "5 metre wide semi circles in the grounds for water retention",
-        1,
-        1,
-        1,
-        1,
-        1,
+        3,
+        3,
+        3,
         10,
-        1
+        3,
+        10,
+        0
         ));
-        treatments.append(new Treatment("Make a pond",
-        2000,
-        "info",
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+        treatments.append(new Treatment("Build a large pond",
+        5000,
+        "A 25 by 25 metre pond with a depth of about 2 metres",
+        15,
+        15,
+        15,
+        20,
+        5,
+        5, // Would ponds affect soilHealth all that much?
         1
         ));
         treatments.append(new Treatment("Plant some trees",
@@ -75,16 +86,19 @@ public class NaturaPrimaMain {
         1,
         1
         ));
-        treatments.append(new Treatment("Burn some trees",
-        500, 
-        "info", 
-        1,
-        1,
-        1,
-        1,
-        1,
-        10,
-        1
+        treatments.append(new Treatment("Burn the remaining vegetation and reintroduce native species",
+        1750, 
+        "A quick controlled burn of the remaining vegetation, which kills almost all species of vegetation, invasive or not. Enriches the soil with nutrients\nto allow " +
+        "for a better start for new growth. Although, while most of the nutrients from the vegetation will be returned to the soil,\nnitrogen and the organisms that fix " +
+        "nitrogen from the soil will be lost. A soil test will need to be done to determine how much nitrogen fertilizer should be added in the soil.\nNew native plants" +
+        ", such as wild flowers, will need their seeds spread and seedlings planted quickly to prevent significant amounts of soil erosion. " ,
+        0,
+        0,
+        0,
+        20,
+        20,
+        30,
+        0
         ));
         treatments.append(new Treatment("Build some wildlife shelters",
         3000,
@@ -99,7 +113,7 @@ public class NaturaPrimaMain {
         ));
         treatments.append(new Treatment("Introduces Pollinators",
         750, 
-        "info", 
+        "Introducing pollinators such as bees and butterflies will help in the pollination of plants, which is essential for plant reproduction and ecosystem health.", 
         1,
         1,
         1,
@@ -154,7 +168,7 @@ public class NaturaPrimaMain {
         ));
         treatments.append(new Treatment("Construct wildlife corridors",
         5000, 
-        "info", 
+        "Constructing wildlife corridors will provide safe passage for animals, helping them to move between different habitats and promoting genetic diversity.", 
         1,
         1,
         1,
@@ -173,6 +187,7 @@ public class NaturaPrimaMain {
         int turnCount = 0;
         int maxTurns = 10;
         double budget = 25000;
+        
         
         //if choice gets picked, add to treatment to players selectedTreatments
         
@@ -227,13 +242,13 @@ public class NaturaPrimaMain {
                 optionTwoRandIndex = (int)(Math.random() * treatments.size()); 
             }
             
-            System.out.println("Option 1: " + treatments.get(optionOneRandIndex).getTreatmentName());
-            System.out.println("Option 2: " + treatments.get(optionTwoRandIndex).getTreatmentName() + "\n");
+            System.out.println(ANSI_YELLOW + "Option 1" + ANSI_RESET + ": " + treatments.get(optionOneRandIndex).getTreatmentName());
+            System.out.println(ANSI_YELLOW + "Option 2" + ANSI_RESET + ": " + treatments.get(optionTwoRandIndex).getTreatmentName() + "\n");
 
-            System.out.println(treatments.get(optionOneRandIndex).getInfo() + "It costs " + treatments.get(optionOneRandIndex).getCost() + "$.\n");
-            System.out.println(treatments.get(optionTwoRandIndex).getInfo() + "It costs " + treatments.get(optionTwoRandIndex).getCost() + "$.\n");
+            System.out.println("The info for option 1: " + treatments.get(optionOneRandIndex).getInfo() + "It costs " + treatments.get(optionOneRandIndex).getCost() + "$.\n");
+            System.out.println("The info for option 2: " + treatments.get(optionTwoRandIndex).getInfo() + "It costs " + treatments.get(optionTwoRandIndex).getCost() + "$.\n");
         
-            System.out.print("Choose an option '1' or '2':");
+            System.out.print("Choose an option '1' or '2': ");
             int choice = input.nextInt();
             input.nextLine();
 
@@ -246,17 +261,17 @@ public class NaturaPrimaMain {
                 if (choice == 1 && treatments.get(optionOneRandIndex).getCost() <= budget) {
                     selectedTreatments.add(treatments.get(optionOneRandIndex));
                     budget -= treatments.get(optionOneRandIndex).getCost();
-                    System.out.println(treatments.get(optionOneRandIndex).getTreatmentName() + " was chosen.");
+                    System.out.println(treatments.get(optionOneRandIndex).getTreatmentName() + " was chosen.\n");
                     isChoiceChosen = true;
                 } else if (choice == 2 && treatments.get(optionTwoRandIndex).getCost() <= budget) {
                     selectedTreatments.add(treatments.get(optionTwoRandIndex));
                     budget -= treatments.get(optionTwoRandIndex).getCost();
-                    System.out.println(treatments.get(optionTwoRandIndex).getTreatmentName() + " was chosen.");
+                    System.out.println(treatments.get(optionTwoRandIndex).getTreatmentName() + " was chosen.\n");
                     isChoiceChosen = true;
                 } else if (choice == 1 && treatments.get(optionOneRandIndex).getCost() > budget) {
-                    System.out.println("insufficient budget, choose the other option.");
+                    System.out.println("insufficient budget, choose the other option.\n");
                 } else if (choice == 2 && treatments.get(optionTwoRandIndex).getCost() > budget) {
-                    System.out.println("insufficient budget, choose the other option.");
+                    System.out.println("insufficient budget, choose the other option.\n");
                 } else {
                     System.out.println("Invalid choice. Please choose 1 or 2\n");
                 }
@@ -268,6 +283,8 @@ public class NaturaPrimaMain {
                     choice = input.nextInt();
                     input.nextLine();
                 }
+
+                System.out.println("Your " + ANSI_GREEN + "budget" + ANSI_RESET + " is now " + + budget + "$\n");
             }
         
             turnCount++;
