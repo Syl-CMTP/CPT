@@ -1,5 +1,11 @@
 package NaturaPrima;
 
+/**
+ * author: Carl Palad
+ * date: 09/01/2025
+ * Treatment class
+ */
+
 public class Treatment {
     private String treatmentName;
     private double cost;
